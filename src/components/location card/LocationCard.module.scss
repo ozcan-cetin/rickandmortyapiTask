@@ -1,0 +1,26 @@
+@import '../../styles/_variable.scss';
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .125);
+    min-height: 240px;
+    padding: 8px;
+    background: rgb(141, 216, 231);
+    background: linear-gradient(
+      70deg,
+      rgba(141, 216, 231, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    h3{
+        font-family: $boldFont;
+        text-align: center;
+        color: rgb(138, 33, 106);
+    }
+    p{
+        font-size: 14px;
+        font-family: $regularFont;
+        text-align: center;
+    }
+}

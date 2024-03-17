@@ -1,0 +1,27 @@
+@import "../../styles/_variable.scss";
+.navbar {
+  width: 100%;
+border-bottom: 1px solid;
+height: 78px;
+  .navbarMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: $boldFont;
+      span{
+        svg{
+          position: relative;
+          top: 3px;
+        }
+      }
+    }
+    .active{
+        color: red;
+    }
+  }
+}

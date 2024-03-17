@@ -1,0 +1,51 @@
+@import '../../styles/_variable.scss';
+
+.characterDetail{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+    p{
+        margin: 0;
+        margin-bottom: 2rem;
+        font-size: 16px;
+        font-family: $regularFont;
+        text-align: left;
+        span{
+          font-family: $boldFont;
+        }
+    }
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: center;
+    } 
+}
+.otherCharacterContainer{
+  h2{
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: $boldFont;
+  }
+}
+.allCharactersContainer {
+    max-width: 1300px;
+    margin: auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 991px) {
+      grid-column-gap: 25px;
+      grid-row-gap: 25px;
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
