@@ -21,12 +21,15 @@ const AllCharacters = () => {
   >([]);
   const [selectedStatus, setSelectedStatus] = useState("");
 
-//pagination section
+  //pagination section
   const [pageNumber, setPageNumber] = useState(1);
   const [perPage, setPerPage] = useState(8);
   const totalPages = Math.ceil(filteredCharactersData?.length / perPage);
-  const slicedData = filteredCharactersData.slice((pageNumber - 1) * perPage, pageNumber * perPage);
-  const handlePageChange = (pageNumber:number) => {
+  const slicedData = filteredCharactersData.slice(
+    (pageNumber - 1) * perPage,
+    pageNumber * perPage
+  );
+  const handlePageChange = (pageNumber: number) => {
     setPageNumber(pageNumber);
   };
 
@@ -96,15 +99,22 @@ const AllCharacters = () => {
       <div className={`${style.allCharactersContainer}`}>
         {slicedData?.map((item: CharacterItem) => {
           return (
-            <CharacterCard item={item} charactersData={charactersData} key={item.id}/>
+            <CharacterCard
+              item={item}
+              charactersData={charactersData}
+              key={item.id}
+            />
           );
         })}
       </div>
+      {totalPages > 0 && (
         <Pagination
-       currentPage={pageNumber}
-       totalPages={totalPages}
-       onPageChange={handlePageChange}
-       setPageNumber={setPageNumber}/>
+          currentPage={pageNumber}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          setPageNumber={setPageNumber}
+        />
+      )}
     </div>
   );
 };

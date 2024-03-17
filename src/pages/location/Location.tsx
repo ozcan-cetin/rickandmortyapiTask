@@ -5,15 +5,14 @@ import style from "./Location.module.scss";
 import { Pagination } from "../../components/pagination/Pagination";
 import { LocationItem } from "../../types/types";
 
-
 const Location = () => {
   const [pageNumber, setPageNumber] = useState(1);
 
   const { data, isLoading, refetch } = useLocationQuery(`page=${pageNumber}`);
   const locations = data?.results;
-  const lastPage = data?.info.pages
+  const lastPage = data?.info.pages;
 
-  const handlePageChange = (pageNumber:number) => {
+  const handlePageChange = (pageNumber: number) => {
     setPageNumber(pageNumber);
   };
 
@@ -34,13 +33,14 @@ const Location = () => {
           ))}
         </ul>
       )}
-
-<Pagination
-        currentPage={pageNumber}
-        totalPages={lastPage}
-        onPageChange={handlePageChange}
-        setPageNumber={setPageNumber}
-      />
+      {lastPage > 0 && (
+        <Pagination
+          currentPage={pageNumber}
+          totalPages={lastPage}
+          onPageChange={handlePageChange}
+          setPageNumber={setPageNumber}
+        />
+      )}
     </div>
   );
 };
