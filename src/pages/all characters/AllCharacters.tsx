@@ -96,6 +96,9 @@ const AllCharacters = () => {
         </select>
         <IoIosArrowDown className={`${style.arrow}`} />
       </div>
+      {totalPages < 1 && (
+            <p className={`${style.noCharacter}`}>No Data</p>
+          )}
       <div className={`${style.allCharactersContainer}`}>
         {slicedData?.map((item: CharacterItem) => {
           return (

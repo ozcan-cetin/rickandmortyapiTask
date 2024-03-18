@@ -27,6 +27,11 @@
     font-size: 1.4rem;
   }
 }
+.noCharacter{
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: $boldFont;
+}
 .allCharactersContainer {
   max-width: 1300px;
   margin: auto;

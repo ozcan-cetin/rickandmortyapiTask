@@ -100,6 +100,7 @@ const CharacterDetail = () => {
       </div>
       <div className={`${style.otherCharacterContainer}`}>
         <h2>OTHER CHARACTERS</h2>
+        {totalPages < 1 && <p className={`${style.noCharacter}`}>No Characters</p>}
         <div className={`${style.allCharactersContainer}`}>
           {slicedData?.map((item: CharacterItem) => {
             return <DetailCharacterCard item={item} />;
